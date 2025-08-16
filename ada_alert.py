@@ -30,8 +30,9 @@ if __name__ == "__main__":
         price = get_ada_price()
         if price:
             print(f"ADA = {price} €")
-            if 0.70 <= price <= 0.72:
+            if 0.70 <= price <= 0.78:
                 send_telegram_message(f"🚀 ADA está en {price:.3f} € (¡Entre 0.70 y 0.72!)")
         time.sleep(30)  # cada 30 segundos
+
 
 
