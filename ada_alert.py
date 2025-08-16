@@ -18,7 +18,7 @@ def get_ada_price():
         return None
 
 def send_telegram_message(msg):
-    url = "https://api.telegram.org/bot{TOKEN}/sendMessage"
+    url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
     payload = {"chat_id": CHAT_ID, "text": msg}
     try:
         requests.post(url, data=payload)
@@ -33,4 +33,5 @@ if __name__ == "__main__":
             if 0.70 <= price <= 0.72:
                 send_telegram_message(f"🚀 ADA está en {price:.3f} € (¡Entre 0.70 y 0.72!)")
         time.sleep(30)  # cada 30 segundos
+
 
