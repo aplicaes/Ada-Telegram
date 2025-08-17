@@ -33,7 +33,8 @@ if __name__ == "__main__":
             #if 0.70 <= price <= 0.80:
             if price > 0.82:
                 send_telegram_message(f"🚀 ADA está en {price:.3f} € (¡Mas de 0.82!)")
-        time.sleep(60)  # cada 60 segundos
+        time.sleep(1800)  # cada 1800 segundos
+
 
 
 
