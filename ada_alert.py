@@ -33,14 +33,15 @@ def check_price():
     price = get_ada_price()
     if price:
         print(f"ADA = {price:.3f} €")
-        if 0.70 <= price <= 0.72:
-            send_telegram_message(f"🚀 ADA está en {price:.3f} € (¡Entre 0.70 y 0.72!)")
+        if 0.70 <= price <= 0.84:
+            send_telegram_message(f"🚀 ADA está en {price:.3f} € ")
 
 # 📌 Programar la tarea cada 1 minuto
-schedule.every(1).minutes.do(check_price)
+schedule.every(30).minutes.do(check_price)
 
-print("✅ Bot ADA iniciado... (comprobando cada minuto)")
+print("✅ Bot ADA iniciado... (comprobando cada 30 minutos)")
 
 while True:
     schedule.run_pending()
-    time.sleep(1)
+    time.sleep(30)
+
